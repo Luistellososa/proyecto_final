@@ -1,0 +1,1115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel-item{
+    max-height: 100vh;
+}
+
+body {
+  background-color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Encabezado principal */
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Menú normal */
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #fcd6b2;
+  border: 2px solid #dca168;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background-color: #dca168;
+  color: #fff;
+}
+
+/* Icono hamburguesa */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Oculta el checkbox */
+.menu-toggle {
+  display: none;
+}
+
+/* Responsive: versión móvil */
+@media (max-width: 768px) {
+  .menu {
+    width: 100%;
+    display: none;
+    margin-top: 10px;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+  }
+
+  .menu-toggle:checked + .menu-icon + .menu {
+    display: block;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+}
+
+.lema-container {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto; 
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  pointer-events: none; 
+  padding: 0 150px;
+}
+
+.lema-text {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .lema-container {
+    padding: 0 30px;
+  }
+
+  .lema-text {
+    font-size: 1.2rem;
+  }
+}
+
+/* Contenedor general */
+.opciones-principales {
+  display: flex;
+  justify-content: center;    
+  align-items: center;        
+  flex-wrap: wrap;            
+  gap: 60px;                  
+  padding: 70px 20px;
+  background-color: #fff;     
+}
+
+/* Tarjeta individual */
+.opción {
+  width: 600px;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+/* Efecto hover */
+.opción:hover {
+  transform: scale(1.05);
+  filter: brightness(0.85);
+}
+
+/* Texto centrado */
+.texto-superior a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.texto-superior a:hover {
+  color: orange;
+}
+
+/* Imágenes específicas */
+.opción.diseño {
+  background-image: url(img/Cuadro2.jpg);
+}
+
+.opción.instructivo {
+  background-image: url(img/Cuadro1.jpg);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .opción {
+    width: 100%;
+    height: 400px;
+  }
+
+  .texto-superior a {
+    font-size: 2.5rem;
+  }
+}
+
+.seccion-destacados {
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+}
+
+/*destacado*/
+
+.sombra-titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  color: #222;
+  margin-top: -50px;         /* subir lo más posible */
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.titulo-destacados {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 10px;    /*subir titulo mas arriba*/
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.seccion-destacados {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+}
+
+.card {
+  width: 230px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /*efecto*/
+  background-color: white;
+}
+
+.card:hover {
+  transform: translateY(-5px); /*efecto*/
+}
+
+.card img {
+  height: 500px; /*hacer imágenes mas grandes*/
+  width: 100%;
+  object-fit: cover;
+  object-position: top; /* enfoca la parte superior */
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+/*explora*/
+
+.explora {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.titulo-explora {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-explora {
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* separación horizontal */
+  flex-wrap: wrap;
+}
+
+.item-explora {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.item-explora:hover {
+  transform: scale(1.03);
+}
+
+.item-explora img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Muestra toda la imagen sin cortar */
+  border-radius: 3px;
+}
+
+/*Comunícate con nosotros*/
+
+.redes-sociales {
+  text-align: center;
+  margin: 20px 20px;
+}
+
+.redes-sociales h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  color: #222;
+}
+
+.botones-redes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 150px;
+}
+
+.btn-red {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Esto centra verticalmente también */
+  text-align: center;
+  gap: 8px;
+  background-color: #f3f3f3;
+  padding: 16px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-red i {
+  font-size: 32px;
+  color: inherit; /* Hereda el color del texto del botón */
+}
+
+.btn-red p {
+  margin: 0; /* Esto asegura que el texto esté bien alineado */
+}
+
+/* Hover general */
+.btn-red:hover {
+  background-color: #ffd9b3;
+  transform: translateY(-4px);
+}
+
+/* Hover específicos por red */
+.instagram:hover {
+  background-color: #fef075;
+  color: #c13584;
+}
+
+.facebook:hover {
+  background-color: #c9d8ff;
+  color: #1877f2;
+}
+
+.whatsapp:hover {
+  background-color: #b2f2bb;
+  color: #25d366;
+}
+
+.deviantart:hover{
+  background-color: grey;
+  color: black;
+}
+
+.tumblr:hover{
+  background-color: #1877f2;
+  color: white;
+}
+
+/*Formulario*/
+.suscripcion {
+  text-align: center;
+  margin: 60px 20px;
+  padding: 20px 20px 20px;  
+  text-align: center;
+}
+
+.suscripcion h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  color: #222;
+  margin-bottom: 20px;  /* reducir más */
+  margin-top: 0;        /* Elimina espacio arriba */
+  text-align: center;
+}
+
+/* Contenedor de formulario y texto */
+.contenedor-formulario {
+  margin-top: 40px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+/* Formulario */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+  margin-left: 40px;
+}
+
+.formulario input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Botón "Unirse" */
+.btn-unirse {
+  background-color: #f08a24;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-unirse:hover {
+  background-color: #d96f07;
+}
+
+/* Botón "Iniciar sesión" */
+.btn-iniciar {
+  display: inline-block;
+  text-align: center;
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-iniciar:hover {
+  background-color: #ccc;
+}
+
+.lema {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lema p {
+  font-size: 1.3rem; /* tamaño más pequeño */
+  font-weight: 500;
+  color: #333;
+  line-height: 1.6;
+  text-align: center; /* centrado horizontalmente */
+  max-width: 350px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.08);
+  margin: 0 auto; /* centra el bloque dentro del div */
+}
+
+/*Footer*/
+.footer {
+  background: linear-gradient(to right, wheat, wheat);
+  padding: 60px 20px 10px;
+  color: black;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col {
+  flex: 1 1 280px;
+  min-width: 260px;
+}
+
+.footer-col h4 {
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  color: #000; 
+  position: relative;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+}
+
+.footer-col h4::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color:orange;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.footer-col ul li a {
+  color: #555;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.contacto-footer i {
+  color: black !important; /* o el color que quieras */
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Mapa ajustado */
+.mapa-footer {
+  width: 100%;
+  height: 240px; 
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.mapa-footer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: grab; 
+}
+
+/* Footer inferior */
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;              /* Aumenta la altura del recuadro */
+  padding-top: 25px;         /* Espacio interno arriba */
+  font-size: 0.90rem;
+  color: #000;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 40px;          /* Espacio externo hacia arriba del footer */
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .contacto-footer li {
+    justify-content: center;
+  }
+}
+
+/*--APARTADO DE DISEÑOS--*/
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Introducción */
+.introduccion-diseno {
+  text-align: center;
+  padding-top: 100px;
+  margin-bottom: 20px;
+}
+
+.introduccion-diseno p {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.contenedor-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.imagen-box {
+  width: 312px;
+  height: 450px;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagen-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;              /* llena el contenedor */
+  object-position: top center;    /* enfoca parte superior */
+  display: block;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(to right, wheat, wheat);
+  padding: 60px 20px 10px;
+  color: black;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col {
+  flex: 1 1 280px;
+  min-width: 260px;
+}
+
+.footer-col h4 {
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  color: #000; 
+  position: relative;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+}
+
+.footer-col h4::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: orange;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.footer-col ul li a {
+  color: #555;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.contacto-footer i {
+  color: black !important; /* o el color que quieras */
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Mapa ajustado */
+.mapa-footer {
+  width: 100%;
+  height: 240px; 
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.mapa-footer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: grab; 
+}
+
+/* Footer inferior */
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding-top: 25px;
+  font-size: 0.90rem;
+  color: #000;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .contacto-footer li {
+    justify-content: center;
+  }
+}
+
+/*--APARTADO DE LOS ARCHIVOS PARA DESCARGA--*/
+
+/* Lema bajo el menú */
+.introduccion-patrones {
+  text-align: center;
+  padding-top: 100px;  /* Ajuste para que no lo tape el menú fijo */
+  margin-bottom: 5px;  /* ↓ Acorta el espacio con el siguiente título */
+  background-color: white; /* Puedes cambiar el color según el boceto */
+}
+
+.introduccion-patrones p {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+/* Títulos */
+.titulo-patrones {
+  text-align: center;
+  margin-top: 5px;     /* Acorta aún más el espacio entre lema y título */
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.subtitulo-patrones {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de tarjetas */
+.fila-patrones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1550px;  /* Aumentado ligeramente */
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.patron-box {
+  width: 195px;         /* Ajuste clave: ancho ideal para que quepan 6 */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.patron-box img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.patron-box .descripcion {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.patron-box .btn {
+  font-size: 0.85rem;
+  padding: 6px 14px;
+}
+
+/* Responsive: reduce a 2-3 por fila en móviles */
+@media (max-width: 992px) {
+  .patron-box {
+    width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .patron-box {
+    width: 100%;
+  }
+}
+
+/*--APARTADO DE LOS VIDEOS INSTRUCTIVOS--*/
+
+.introduccion-instructivos {
+  text-align: center;
+  padding-top: 100px;
+  margin-bottom: 35px;
+}
+
+.introduccion-instructivos p {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.contenedor-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding-bottom: 40px; /* ← separación del footer */
+}
+
+.video-box {
+  width: 300px;              /* Igual que las imágenes grandes */
+  height: 500px;             /* Mucho más alto */
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* Llena completamente el contenedor */
+  border-radius: 8px;
+}
+
+/*--APARTADO DE NAVEGACIÓN-PASARELA--*/
+
+/* Contenedor principal de la sección */
+.pasarela-section {
+  padding: 30px 40px 60px;
+}
+
+/* Carrusel */
+#carruselPasarela {
+  position: relative;
+  padding: 0 60px; /* Separación desde los bordes laterales */
+  margin-top: 14px; /* Separación entre el hr y el carrusel */
+}
+
+/* Video */
+#carruselPasarela video {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background-color: #000;
+  margin-bottom: 20px;
+}
+
+/* Flechas del carrusel: más alejadas */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 15px;
+}
+
+/* Carrusel */
+#carruselPasarela2 {
+  position: relative;
+  padding: 0 60px; /* Separación desde los bordes laterales segundo carrusel */
+  margin-top: 14px; /* Separación entre el hr y el carrusel número dos */
+}
+
+/* Video */
+#carruselPasarela2 video {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background-color: #000;
+  margin-bottom: 20px;
+}
+
+/* Flechas del carrusel: más alejadas */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 15px;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  #carruselPasarela {
+    padding: 0 20px;
+  }
+
+  #carruselPasarela video {
+    height: 220px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+  }
+}
+
+/*APARTADO DE SASTRERIA Y COSPLAY*/
+.pasarela-seccion {
+  padding: 30px 40px; /* antes 60px - ajustado para reducir separación */
+  background-color: white;
+  text-align: center;
+}
+
+.titulo-pasarela {
+  font-size: 2.5em;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 10px;
+  box-shadow: #222;
+}
+
+.subtitulo-pasarela {
+  font-size: 1.4em;
+  color: black;
+  margin-bottom: 40px;
+}
+
+.pasarela {
+  padding: 50px 30px;
+  margin-top: -20px; /* nuevo - reduce distancia con la sección superior */
+  background-color: #fff;
+  text-align: center;
+}
+
+.titulo-seccion {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+.contenedor-diseno {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.diseno-box {
+  width: 15%;
+  min-width: 180px;
+  max-width: 200px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 20px 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diseno-box img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  background-color: #fff;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.diseno-box p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+  min-height: 50px;
+}
+
+.btn-descarga {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: cornflowerblue;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-descarga:hover {
+  background-color: paleturquoise;
+}
+
+.btn-descarga:visited {
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .diseno-box {
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .diseno-box {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .diseno-box {
+    width: 100%;
+  }
+}
